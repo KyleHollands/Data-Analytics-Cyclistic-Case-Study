@@ -38,3 +38,6 @@ trimmed_trip_data <- na.omit(trimmed_trip_data)
 sapply(trimmed_trip_data, function(x) sum(is.na(x)))
 
 glimpse(trimmed_trip_data)
+
+trimmed_trip_data %>%
+  summarise(trimmed_trip_data)
