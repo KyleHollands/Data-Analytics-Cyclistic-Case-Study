@@ -103,6 +103,16 @@ The NA's have been removed from the data, and the remaining variables appear to 
 
 ● Have you documented your cleaning process so you can review and share those results?
 
+The cleaning process is documented within the readme file, as it will appear first when viewing the repository on the GitHub website.
+I can also easily add more information here and push it to the repository, or modify it directly on the website itself.
+
+1) Once the data was saved and organized into its designated locations, I started by first looking at the data in the CSV files for each of the past twelve months.
+2) In each CSV file, basic cleaning was performed, such as adding a new column with the length of bike trips, and the day of the week for each trip.
+3) The data was then imported into R and each of the twelve months of data were combined into one.
+4) NA's were checked for by using a small script that summarized the total of NA's found per column. The majority of NA's located existed within columns that were not important for answering the
+business question and were subsequently removed.
+5) 
+
 I am documenting the process through the RMD file, but may migrate it over to Word, or another piece of software.
 This will allow me to keep track of any steps taken, while simultaneously uploading it to GitHub, and seeing the final results from the same file when the R Markdown file is run and knit.
 
