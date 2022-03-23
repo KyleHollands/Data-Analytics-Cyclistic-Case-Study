@@ -1,5 +1,4 @@
 # Data-Analytics-Cyclistic-Case-Study
-# Data-Analytics-Cyclistic-Case-Study
 ---
 Ask
 ---
