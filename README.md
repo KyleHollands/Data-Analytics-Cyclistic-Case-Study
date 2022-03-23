@@ -97,15 +97,6 @@ R Studio will also provide visualization tools when it comes to displaying the p
 
 ● What steps have you taken to ensure that your data is clean? 
 
-● How can you verify that your data is clean and ready to analyze? 
-
-The NA's have been removed from the data, and the remaining variables appear to be designated correct.
-
-● Have you documented your cleaning process so you can review and share those results?
-
-The cleaning process is documented within the readme file, as it will appear first when viewing the repository on the GitHub website.
-I can also easily add more information here and push it to the repository, or modify it directly on the website itself.
-
 1) Once the data was saved and organized into its designated locations, I started by first looking at the data in the CSV files for each of the past twelve months.
 2) In each CSV file, basic cleaning was performed, such as adding a new column with the length of bike trips, and the day of the week for each trip.
 3) The data was then imported into R and each of the twelve months of data were combined into one.
@@ -113,14 +104,20 @@ I can also easily add more information here and push it to the repository, or mo
 business question and were subsequently removed.
 5) Further analysis indicated that after calculating ride lengths, 145 cells were populated with NAs. This is not a statistically signficant number and therefore the rows were removed.
 
-I am documenting the process through the RMD file, but may migrate it over to Word, or another piece of software.
-This will allow me to keep track of any steps taken, while simultaneously uploading it to GitHub, and seeing the final results from the same file when the R Markdown file is run and knit.
+● How can you verify that your data is clean and ready to analyze? 
+
+By filtering, sorting and manually analyzing the data for discrepancies. 
+
+● Have you documented your cleaning process so you can review and share those results?
+
+The cleaning process is documented within the readme file, as it will appear first when viewing the repository on the GitHub website.
+I can also easily add more information here and push it to the repository, or modify it directly on the website itself.
 
 Key tasks 
 1. Check the data for errors. **
 2. Choose your tools. **
 3. Transform the data so you can work with it effectively. **
-4. Document the cleaning process.
+4. Document the cleaning process. **
 
 -------------------------------------------------------------------------------
 
