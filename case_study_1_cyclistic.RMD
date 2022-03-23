@@ -1,0 +1,40 @@
+---
+title: "Case Study 1 - Cyclistic"
+author: "Kyle Hollands"
+date: "10/03/2022"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Table of Contents
+
+- Objective
+- What the data shows
+- Conclusion
+- Appendix?
+
+## Objectives
+
+- How do annual members and casual riders use Cyclistic bikes differently?
+- With this information, how can casual riders be coaxed into purchasing a membership?
+
+## What the data shows
+
+- Bullet 1
+
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
