@@ -60,6 +60,7 @@ and worked on by various parties that are part of the project.
 The only issues so far are NA's present with in the station column.
 
 Key tasks
+
 1. Download data and store it appropriately. **
 
 2. Identify how it’s organized. **
@@ -75,6 +76,7 @@ It contains data that is relevant to the business task, such as rider status, le
 Process
 -------
 Guiding questions 
+
 ● What tools are you choosing and why? 
 I am using a combination of R Studio and Visual Studio Code with the R extension. The reason I am doing this is to quickly upload the information to a GitHub repository, and for it to
 act as a version control system.
