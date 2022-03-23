@@ -6,10 +6,12 @@ Ask
 Guiding questions
 
 ● What is the problem you are trying to solve?
+
 How do annual members and casual riders use Cyclistic bikes differently? Furthermore, how can this data be leveraged
 to convert casual members into memberships?
 
 ● How can your insights drive business decisions?
+
 The insights gained from this analysis will assist in coming up with a strategy
 to convert casual riders to members, which will increase overall revenue.
 
