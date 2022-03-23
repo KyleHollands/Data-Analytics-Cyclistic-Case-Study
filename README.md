@@ -4,6 +4,7 @@ Ask
 ---
 
 Guiding questions
+
 ● What is the problem you are trying to solve?
 How do annual members and casual riders use Cyclistic bikes differently? Furthermore, how can this data be leveraged
 to convert casual members into memberships?
@@ -13,6 +14,7 @@ The insights gained from this analysis will assist in coming up with a strategy
 to convert casual riders to members, which will increase overall revenue.
 
 Key tasks
+
 1. Identify the business task
 The business task is to determine how to convert casual riders into members,
 thus driving business revenue.
@@ -31,6 +33,7 @@ Prepare
 -------
 
 Guiding questions
+
 ● Where is your data located?
 The individual data sets are stored within a folder locally, then imported into
 RStudio within a variable.
