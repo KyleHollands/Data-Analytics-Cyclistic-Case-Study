@@ -15,7 +15,7 @@ combined_trip_data <- list.files(path = "./Datasets/Modified CSV Files",  # Iden
   bind_rows                                         # Combine data sets into one data set 
 
 # Review the data
-View(combined_trip_data)
+#View(combined_trip_data)
 glimpse(combined_trip_data)
 
 # Trim the dataset to only include the most relevant information
@@ -30,6 +30,11 @@ trimmed_trip_data <- combined_trip_data %>%
 
 glimpse(trimmed_trip_data)
 
-# Determine which columns contain the most NA's.
-
+# Determine which columns/rows contain the most NA's.
 sapply(trimmed_trip_data, function(x) sum(is.na(x)))
+
+# Remove rows
+trimmed_trip_data <- na.omit(trimmed_trip_data)
+sapply(trimmed_trip_data, function(x) sum(is.na(x)))
+
+glimpse(trimmed_trip_data)

@@ -111,7 +111,7 @@ I can also easily add more information here and push it to the repository, or mo
 3) The data was then imported into R and each of the twelve months of data were combined into one.
 4) NA's were checked for by using a small script that summarized the total of NA's found per column. The majority of NA's located existed within columns that were not important for answering the
 business question and were subsequently removed.
-5) 
+5) Further analysis indicated that after calculating ride lengths, 145 cells were populated with NAs. This is not a statistically signficant number and therefore the rows were removed.
 
 I am documenting the process through the RMD file, but may migrate it over to Word, or another piece of software.
 This will allow me to keep track of any steps taken, while simultaneously uploading it to GitHub, and seeing the final results from the same file when the R Markdown file is run and knit.
