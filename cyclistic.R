@@ -22,22 +22,51 @@ glimpse(combined_trip_data)
 trimmed_trip_data <- combined_trip_data %>%
   select(rideable_type, ride_length, day_of_week, member_casual)
 
-# Split the date columns into data and times.
-trimmed_trip_data <- combined_trip_data %>%
-  separate(started_at, c("started_at_date", "started_at_time"), sep = " ")
-trimmed_trip_data <- combined_trip_data %>%
-  separate(ended_at, c("ended_at_date", "ended_at_time"), sep = " ")
-
 glimpse(trimmed_trip_data)
 
 # Determine which columns/rows contain the most NA's.
 sapply(trimmed_trip_data, function(x) sum(is.na(x)))
 
 # Remove rows
-trimmed_trip_data <- na.omit(trimmed_trip_data)
-sapply(trimmed_trip_data, function(x) sum(is.na(x)))
+cleaned_trip_data <- na.omit(trimmed_trip_data)
 
+sapply(cleaned_trip_data, function(x) sum(is.na(x)))
 glimpse(trimmed_trip_data)
 
-trimmed_trip_data %>%
-  summarise(trimmed_trip_data)
+# Calculate initial statistics for casual riders
+
+cleaned_trip_data %>%
+  filter(member_casual == "casual",) %>%
+  summarize(min_ride_length = min(ride_length),
+            average_ride_length = mean(ride_length),
+            median_ride_length = median(ride_length),
+            max_ride_length = max(ride_length))
+
+# Calculate initial statistics for members.
+
+cleaned_trip_data %>%
+  filter(member_casual == "member") %>%
+  summarize(min_ride_length = min(ride_length),
+            average_ride_length = mean(ride_length),
+            median_ride_length = median(ride_length),
+            max_ride_length = max(ride_length))
+
+# Trim data to remove obscure ride lengths.
+cleaned_trip_data <- cleaned_trip_data[cleaned_trip_data$ride_length < 10800, ]
+cleaned_trip_data <- cleaned_trip_data[cleaned_trip_data$ride_length > 60, ]
+
+glimpse(cleaned_trip_data)
+
+cleaned_trip_data %>%
+  filter(member_casual == "casual") %>%
+  summarize(min_ride_length = min(ride_length),
+            average_ride_length = mean(ride_length),
+            median_ride_length = median(ride_length),
+            max_ride_length = max(ride_length))
+
+cleaned_trip_data %>%
+  filter(member_casual == "member") %>%
+  summarize(min_ride_length = min(ride_length),
+            average_ride_length = mean(ride_length),
+            median_ride_length = median(ride_length),
+            max_ride_length = max(ride_length))
