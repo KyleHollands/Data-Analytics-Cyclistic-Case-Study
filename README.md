@@ -60,7 +60,7 @@ Privacy: Similar to above, PII has been excluded from this dataset.
 
 Security:
 
-Accessibility: The case study is being worked on through Visual Studio Code and R Studio, which is actively uploaded to GitHub, acting as a version control system. It could, hypothetically, be accessed and worked on by various parties that are part of the project.
+Accessibility: The case study is being worked on through Visual Studio Code and R Studio, which is actively uploaded to GitHub, acting as a version control system. It could, hypothetically, be accessed and worked on by various parties that are part of the project as well.
 
 ● How did you verify the data’s integrity?
 
