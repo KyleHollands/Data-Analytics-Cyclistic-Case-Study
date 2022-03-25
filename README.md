@@ -103,10 +103,15 @@ R Studio will also provide visualization tools when it comes to displaying the p
 4) NA's were checked for by using a small script that summarized the total of NA's found per column. The majority of NA's located existed within columns that were not important for answering the
 business question and were subsequently removed.
 5) Further analysis indicated that after calculating ride lengths, 145 cells were populated with NAs. This is not a statistically signficant number and therefore the rows were removed.
+6) After running an initial analysis on the data with the summarize function, it was determined that there were issues with the ride length values, as some were either extremely long,
+or extremely short. These values were skewing the data, and are unreasonable ride length values.
+I removed any rows that contained ride lengths exceeding 3 hours, which seemed like a reasonable ride length for casual bike ride, maybe on a weekend.
+Values that were less than 1 minute were also excluded.
 
 ● How can you verify that your data is clean and ready to analyze? 
 
-By filtering, sorting and manually analyzing the data for discrepancies. 
+By filtering, sorting and manually analyzing the data for discrepancies.
+Checking for remaining NA's, and values that are skewing the trends in the data.
 
 ● Have you documented your cleaning process so you can review and share those results?
 
