@@ -6,10 +6,8 @@ Ask
 Guiding questions
 
 ● What is the problem you are trying to solve?
-
 How do annual members and casual riders use Cyclistic bikes differently? Furthermore, how can this data be leveraged
 to convert casual members into memberships?
-
 ● How can your insights drive business decisions?
 
 The insights gained from this analysis will assist in coming up with a strategy
@@ -18,11 +16,9 @@ to convert casual riders to members, which will increase overall revenue.
 Key tasks
 
 1. Identify the business task
-
 The business task is to determine how to convert casual riders into members,
 thus driving business revenue.
-
-2. Consider key stakeholders
+2. Consider key stakeholders:
 
 Lily Moreno - Moreno is responsible for the development of campaigns
 and initiatives to promote the bike-share program.
@@ -45,16 +41,13 @@ The individual data sets are stored within a folder locally, then imported into
 RStudio within a variable.
 
 ● How is the data organized?
-
 The data sets are organized in chronological order from the last twelve months.
 
 ● Are there issues with bias or credibility in this data? Does your data ROCCC?
-
 here appears to be some NA's present within the station columns. However,
 this shouldn't pose a huge issue when attempting to address the business task.
 
 ● How are you addressing licensing, privacy, security, and accessibility?
-
 Licensing: This data has been made available to be used for these purposes. Information pertaining to personal information has been excluded.
 Privacy: Similar to above, PII has been excluded from this dataset.
 
@@ -72,9 +65,7 @@ The only issues so far are NA's present with in the station column.
 Key tasks
 
 1. Download data and store it appropriately. **
-
 2. Identify how it’s organized. **
-
 3. Sort and filter the data. **
 Data has been sorted and filtered based on information that appears to be relevant/helpful for the analysis.    
 
@@ -89,7 +80,6 @@ Process
 Guiding questions 
 
 ● What tools are you choosing and why? 
-
 I am using a combination of R Studio and Visual Studio Code with the R extension. The reason I am doing this is to quickly upload the information to a GitHub repository, and for it to act as a version control system.
 R Studio will also provide visualization tools when it comes to displaying the patterns in the data.
 
@@ -109,12 +99,10 @@ I removed any rows that contained ride lengths exceeding 3 hours, which seemed l
 Values that were less than 1 minute were also excluded.
 
 ● How can you verify that your data is clean and ready to analyze? 
-
 By filtering, sorting and manually analyzing the data for discrepancies.
 Checking for remaining NA's, and values that are skewing the trends in the data.
 
 ● Have you documented your cleaning process so you can review and share those results?
-
 The cleaning process is documented within the readme file, as it will appear first when viewing the repository on the GitHub website.
 I can also easily add more information here and push it to the repository, or modify it directly on the website itself.
 
@@ -123,6 +111,25 @@ Key tasks
 2. Choose your tools. **
 3. Transform the data so you can work with it effectively. **
 4. Document the cleaning process. **
+
+-------
+Analyze
+-------
+
+Guiding questions 
+
+● How should you organize your data to perform analysis on it? 
+● Has your data been properly formatted? 
+● What surprises did you discover in the data? 
+● What trends or relationships did you find in the data? 
+● How will these insights help answer your business questions?
+
+Key tasks 
+
+1. Aggregate your data so it’s useful and accessible. 
+2. Organize and format your data. 
+3. Perform calculations. 
+4. Identify trends and relationships.
 
 -------------------------------------------------------------------------------
 

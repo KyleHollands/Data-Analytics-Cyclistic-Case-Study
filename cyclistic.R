@@ -15,7 +15,6 @@ combined_trip_data <- list.files(path = "./Datasets/Modified CSV Files",  # Iden
   bind_rows                                         # Combine data sets into one data set 
 
 # Review the data
-#View(combined_trip_data)
 glimpse(combined_trip_data)
 
 # Trim the dataset to only include the most relevant information
@@ -70,3 +69,9 @@ cleaned_trip_data %>%
             average_ride_length = mean(ride_length),
             median_ride_length = median(ride_length),
             max_ride_length = max(ride_length))
+
+# Determine which day is the most popular, what the most popular bike is,
+# and whether members or casual riders are in the majority.
+table(cleaned_trip_data$member_casual)
+table(cleaned_trip_data$rideable_type)
+table(cleaned_trip_data$day_of_week)
