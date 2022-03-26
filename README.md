@@ -119,17 +119,53 @@ Analyze
 Guiding questions 
 
 ● How should you organize your data to perform analysis on it? 
+The data should be organized into a single dataset for easier analysis.
+Furthermore, after understanding the information within the datasets, keep the columns
+that are relevant to the business task. If necessary, data can also be sorted.
+
 ● Has your data been properly formatted? 
+The data appears to be properly formatted.
+
 ● What surprises did you discover in the data? 
+The first surprise was the existence of NAs, which I did not see during the first
+quick analysis of the data.
+Second, were the extreme max and min outliers in the data which had to be removed to ensure
+analysis was not being skewed.
+
 ● What trends or relationships did you find in the data? 
+1) It appears that casual riders utilize the service far more on Saturdays and Sundays,
+whereas members use the service relatively the same throughout the week. Since members usage of
+the service is covered in a subscription, they are more likely to consistently use the service
+without incurring extra fees associated with using the bike on a per-use basis.
+
+2) According to the data, members utilize both types of bikes more than casual riders, however,
+this is likely due to the fact there are overall more members than casual riders over the course
+of the last twelve months. This is not necessarily indicative of one type of rider favoring 
+one type of ride over another.
+
+3) By comparing casual and member average ride lengths, it seems casual riders tend to have
+longer rides overall, while although there are more member riders in the last twelve months,
+they seem to be shorter on average.
+This could indicate that casual riders are using the service for more leisure-type rides,
+while members are more frequently utilizing it for getting back and forth from work or other
+reoccurring obligations.
+This is further corroborated by the fact the amount of member riders over the course of a week
+appears to similar, whereas casual riders tend to use it more on Saturdays and Sundays.
+
 ● How will these insights help answer your business questions?
+The aforementioned insights indicate that casual riders tend to use the service more for leisure
+rides during the weekend, whereas members are using the service more consistently throughout the
+week, likely as a method of transit to and from work.
 
-Key tasks 
+These insights could be leveraged in a way that emphasizes that casual riders could be using this service during the week as a main form of transit, likely saving money vs using a vehicle or
+public transit.
 
-1. Aggregate your data so it’s useful and accessible. 
-2. Organize and format your data. 
-3. Perform calculations. 
-4. Identify trends and relationships.
+Key tasks
+
+1. Aggregate your data so it’s useful and accessible. **
+2. Organize and format your data. **
+3. Perform calculations. **
+4. Identify trends and relationships. **
 
 -------------------------------------------------------------------------------
 

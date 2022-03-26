@@ -8,7 +8,7 @@ library(plyr)
 library(dplyr)
 library(readr)
 
-# Import and combine twelve months of data into one
+# Import and combine twelve months of data into one dataset
 combined_trip_data <- list.files(path = "./Datasets/Modified CSV Files",  # Identify all CSV files
   pattern = "*.csv", full.names = TRUE) %>% 
   lapply(read_csv) %>%                              # Store all files in list
@@ -75,3 +75,13 @@ cleaned_trip_data %>%
 table(cleaned_trip_data$member_casual)
 table(cleaned_trip_data$rideable_type)
 table(cleaned_trip_data$day_of_week)
+
+# Compare day of week vs rider type.
+table(cleaned_trip_data$day_of_week,
+cleaned_trip_data$member_casual)
+
+table(cleaned_trip_data$member_casual,
+cleaned_trip_data$rideable_type)
+
+table(cleaned_trip_data$ride_length,
+cleaned_trip_data$day_of_week)
