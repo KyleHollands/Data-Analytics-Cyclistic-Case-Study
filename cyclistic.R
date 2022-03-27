@@ -25,6 +25,8 @@ combined_trip_data <- list.files(path = "./Datasets/Modified CSV Files",  # Iden
                    ,to_station_id = end_station_id
                    ,usertype = member_casual))
 
+table(combined_trip_data$usertype)
+
 # Trim the dataset to only include the most relevant information
 trimmed_trip_data <- combined_trip_data %>%
   select(-c(start_lat, start_lng, end_lat, end_lng))
@@ -39,6 +41,17 @@ head(trimmed_trip_data)
 tail(trimmed_trip_data)
 summary(trimmed_trip_data)
 str(trimmed_trip_data)
+
+trimmed_trip_data$date <- as.Date(trimmed_trip_data$start_time) #The default format is yyyy-mm-dd
+trimmed_trip_data$month <- format(as.Date(trimmed_trip_data$date), "%m")
+trimmed_trip_data$day <- format(as.Date(trimmed_trip_data$date), "%d")
+trimmed_trip_data$year <- format(as.Date(trimmed_trip_data$date), "%Y")
+
+# Recode the day of week from a number to a day. (Data was initially manipulated calculating
+# day of week as a double.)
+trimmed_trip_data$day_of_week <- format(as.Date(trimmed_trip_data$date), "%A")
+
+glimpse(trimmed_trip_data)
 
 # Determine which columns/rows contain the most NA's.
 sapply(trimmed_trip_data, function(x) sum(is.na(x)))
@@ -87,7 +100,6 @@ cleaned_trip_data$usertype)
 table(cleaned_trip_data$usertype,
 cleaned_trip_data$rideable_type)
 
-
 # Descriptive analysis on ride_length
 mean(cleaned_trip_data$ride_length) #straight average (total ride length / rides)
 median(cleaned_trip_data$ride_length) #midpoint number in the ascending array of ride lengths
@@ -96,3 +108,43 @@ min(cleaned_trip_data$ride_length) #shortest ride
 
 # Compare members and casual users
 aggregate(cleaned_trip_data$ride_length ~ cleaned_trip_data$usertype, FUN = mean)
+aggregate(cleaned_trip_data$ride_length ~ cleaned_trip_data$usertype, FUN = median)
+aggregate(cleaned_trip_data$ride_length ~ cleaned_trip_data$usertype, FUN = max)
+aggregate(cleaned_trip_data$ride_length ~ cleaned_trip_data$usertype, FUN = min)
+
+# Determine average ride time for each day, by user type
+glimpse(cleaned_trip_data)
+aggregate(cleaned_trip_data$ride_length ~ cleaned_trip_data$usertype + cleaned_trip_data$day_of_week, FUN = mean)
+cleaned_trip_data$day_of_week <- ordered(cleaned_trip_data$day_of_week, levels=c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+aggregate(cleaned_trip_data$ride_length ~ cleaned_trip_data$usertype + cleaned_trip_data$day_of_week, FUN = mean)
+
+glimpse(cleaned_trip_data)
+
+# analyze ridership data by type and weekday
+
+cleaned_trip_data %>% 
+  mutate(weekday = wday(start_time, label = TRUE)) %>%  #creates weekday field using wday()
+  group_by(usertype, weekday) %>%  #groups by usertype and weekday
+  summarise(number_of_rides = n()                            #calculates the number of rides and average duration 
+  ,average_duration = mean(ride_length)) %>%         # calculates the average duration
+  arrange(usertype, weekday)                                # sorts
+
+# Visualize the number of rides by usertype
+cleaned_trip_data %>% 
+  mutate(weekday = wday(start_time, label = TRUE)) %>% 
+  group_by(usertype, weekday) %>% 
+  summarise(number_of_rides = n(),
+  average_duration = mean(ride_length)) %>% 
+  arrange(usertype, weekday)  %>% 
+  ggplot(aes(x = weekday, y = number_of_rides, fill = usertype)) +
+  geom_col(position = "dodge")
+
+  # Visualize average ride length per usertype
+cleaned_trip_data %>% 
+  mutate(weekday = wday(start_time, label = TRUE)) %>% 
+  group_by(usertype, weekday) %>% 
+  summarise(number_of_rides = n(),
+  average_duration = mean(ride_length)) %>% 
+  arrange(usertype, weekday)  %>% 
+  ggplot(aes(x = weekday, y = average_duration, fill = usertype)) +
+  geom_col(position = "dodge")
