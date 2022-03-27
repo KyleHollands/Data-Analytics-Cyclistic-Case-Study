@@ -121,6 +121,10 @@ Key tasks
 3. Transform the data so you can work with it effectively. **
 4. Document the cleaning process. **
 
+Deliverable:
+
+Documentation of any cleaning or manipulation of data
+
 -------
 Analyze
 -------
@@ -179,6 +183,10 @@ Key tasks
 2. Organize and format your data. **
 3. Perform calculations. **
 4. Identify trends and relationships. **
+
+Deliverable:
+
+A summary of your analysis
 
 -------------------------------------------------------------------------------
 
