@@ -188,6 +188,8 @@ Deliverable:
 
 A summary of your analysis
 
+Preliminary analysis indicates that casual riders tend to, on average, have longer ride times than members. Furthermore, casual riders appears to use the service more on weekends, likely for leisure activities and communites, while members use it more consistently (and more often) during the week. This likely indicates that members are using the service for work more often than casual riders are.
+
 -------------------------------------------------------------------------------
 
 With the objective clear, the next step is to analyze the data set. This will

@@ -148,3 +148,8 @@ cleaned_trip_data %>%
   arrange(usertype, weekday)  %>% 
   ggplot(aes(x = weekday, y = average_duration, fill = usertype)) +
   geom_col(position = "dodge")
+
+# Export a summary file
+
+counts <- aggregate(cleaned_trip_data$ride_length ~ cleaned_trip_data$usertype + cleaned_trip_data$day_of_week, FUN = mean)
+write.csv(counts, file = 'avg_ride_length.csv')
