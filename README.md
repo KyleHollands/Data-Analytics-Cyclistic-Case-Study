@@ -190,7 +190,31 @@ A summary of your analysis
 
 Preliminary analysis indicates that casual riders tend to, on average, have longer ride times than members. Furthermore, casual riders appears to use the service more on weekends, likely for leisure activities and communites, while members use it more consistently (and more often) during the week. This likely indicates that members are using the service for work more often than casual riders are.
 
--------------------------------------------------------------------------------
+-------
+Share
+-------
+
+Guiding questions 
+
+● Were you able to answer the question of how annual members and casual riders use Cyclistic bikes differently?
+Yes. The data indicates that casual riders are utilizing the service for more leisure rides, such as on the weekends. Members appear to be using the service more consistently throughout the week, likely for work. 
+Members ride activity appears to peak mid-week, around Tuesday and Wednesday, whereas it peaks on Saturday and Sunday for Casual riders.
+
+● What story does your data tell? 
+The story that is being told within the data, is that casual riders are using this service during the weekends, likely for one-off, leisure rides. Additionally, casual riders tend to use the bike longer each trip, on average.
+Members on the other hand, appear to be using it more during the week, likely as their main form of transportation commuting to and from work. These rides also appear to be shorter in duration, on average, compared to casual riders.
+
+● How do your findings relate to your original question?
+The findings relate directly to the original question, which was "How do annual members and casual riders use Cyclistic bikes differently?" by clearly indicating the differences between how casual riders and members are utilizing the service.
+
+● Who is your audience? What is the best way to communicate with them?
+
+
+● Can data visualization help you share your findings?
+
+● Is your presentation accessible to your audience?
+
+------------------------------------------------------------------------------
 
 With the objective clear, the next step is to analyze the data set. This will
 include viewing it to investigate any obvious issues, such as missing data,
