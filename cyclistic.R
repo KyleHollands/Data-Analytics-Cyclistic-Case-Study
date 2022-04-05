@@ -29,10 +29,9 @@ table(combined_trip_data$usertype)
 
 # Trim the dataset to only include the most relevant information
 trimmed_trip_data <- combined_trip_data %>%
-  select(-c(start_lat, start_lng, end_lat, end_lng))
+  select(-c(start_lat, start_lng, end_lat, end_lng, from_station_name,from_station_id,to_station_name,to_station_id))
 
 # Inspect the data
-
 colnames(trimmed_trip_data)
 glimpse(trimmed_trip_data)
 nrow(trimmed_trip_data)
@@ -121,33 +120,52 @@ aggregate(cleaned_trip_data$ride_length ~ cleaned_trip_data$usertype + cleaned_t
 glimpse(cleaned_trip_data)
 
 # analyze ridership data by type and weekday
-
 cleaned_trip_data %>% 
   mutate(weekday = wday(start_time, label = TRUE)) %>%  #creates weekday field using wday()
   group_by(usertype, weekday) %>%  #groups by usertype and weekday
-  summarise(number_of_rides = n()                            #calculates the number of rides and average duration 
-  ,average_duration = mean(ride_length)) %>%         # calculates the average duration
+  summarise(number_of_rides = n(),                            #calculates the number of rides and average duration 
+  average_duration = mean(ride_length)) %>%         # calculates the average duration
   arrange(usertype, weekday)                                # sorts
 
 # Visualize the number of rides by usertype
 cleaned_trip_data %>% 
   mutate(weekday = wday(start_time, label = TRUE)) %>% 
-  group_by(usertype, weekday) %>% 
+  group_by(usertype, weekday) %>%
   summarise(number_of_rides = n(),
   average_duration = mean(ride_length)) %>% 
   arrange(usertype, weekday)  %>% 
   ggplot(aes(x = weekday, y = number_of_rides, fill = usertype)) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  labs(
+    x = "Day of Week", y = "# of Rides",
+    color = NULL,
+    title = "Number of rides each day by usertype",
+    subtitle = "Estimates based on ridership data collected through Cyclistic bikeshare terminals",
+    caption = "Source: Cyclistic"
+  ) +
+  scale_fill_discrete(name="Usertype") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
 
-  # Visualize average ride length per usertype
-cleaned_trip_data %>% 
+# Visualize average ride length per usertype
+cleaned_trip_data %>%
   mutate(weekday = wday(start_time, label = TRUE)) %>% 
-  group_by(usertype, weekday) %>% 
+  group_by(usertype, weekday) %>%
   summarise(number_of_rides = n(),
-  average_duration = mean(ride_length)) %>% 
-  arrange(usertype, weekday)  %>% 
+  average_duration = mean(ride_length)) %>%
+  arrange(usertype, weekday) %>% 
   ggplot(aes(x = weekday, y = average_duration, fill = usertype)) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  labs(
+    x = "Day of Week", y = "Average Ride Length",
+    color = "New Legend Title",
+    title = "Average ride length per usertype by day of week",
+    subtitle = "Estimates based on ridership data collected through Cyclistic bikeshare terminals",
+    caption = "Source: Cyclistic"
+  ) +
+  scale_fill_discrete(name="Usertype") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
 
 # Export a summary file
 
