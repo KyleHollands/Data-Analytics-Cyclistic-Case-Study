@@ -36,8 +36,7 @@ library(dplyr)
 library(readr)
 library(lubridate)
 
-options("scipen"=10,
-dplyr.summarise.inform = FALSE)
+options("scipen"=10)
 
 # Import and combine twelve months of data into one dataset
 combined_trip_data <- list.files(path = "./Datasets/Modified CSV Files",  # Identify all CSV files
@@ -92,10 +91,10 @@ cleaned_trip_data <- na.omit(cleaned_trip_data)
 
 ## Ride Statistics
 ```{r statistics_2, echo=FALSE, fig.keep='all', warning=FALSE, message=FALSE, tidy=TRUE}
-cleaned_trip_data %>% 
-  mutate(weekday = wday(start_time, label = TRUE)) %>% 
-  group_by(usertype, weekday) %>% 
-  summarise(number_of_rides = n(), 
+cleaned_trip_data %>%
+  mutate(weekday = wday(start_time, label = TRUE)) %>%
+  group_by(usertype, weekday) %>%
+  summarise(number_of_rides = n(),
   average_duration = mean(ride_length)) %>%
   arrange(usertype, weekday)
 ```
