@@ -208,11 +208,25 @@ Members on the other hand, appear to be using it more during the week, likely as
 The findings relate directly to the original question, which was "How do annual members and casual riders use Cyclistic bikes differently?" by clearly indicating the differences between how casual riders and members are utilizing the service.
 
 ● Who is your audience? What is the best way to communicate with them?
-
+The stakeholders are Lily Moreno, the Director of Marketing and the Cyclistic executive team.
+Communicating with the Lily, the manager, is far more direct than it is with the Executive team. Likely, updates will be provided through Lily, to them.
+In terms of communicating the findings of this analysis, a case study can serve this purpose, detailing the data behind the findings in an easy to digest way, while also providing simple visualizations that emphasize them in a way that can be easier and more quickly understood.
 
 ● Can data visualization help you share your findings?
+Data visualization in this  circumstance can definitely help share these findings. The type of story this data tells is easily understood through a couple of simple visualizations which indicate the contrast between the different members and how they use the service.
 
 ● Is your presentation accessible to your audience?
+
+Key tasks
+1. Determine the best way to share your findings. **
+2. Create effective data visualizations. **
+3. Present your findings. 
+4. Ensure your work is accessible. 
+
+Deliverable:
+
+Supporting visualizations and key findings
+
 
 ------------------------------------------------------------------------------
 

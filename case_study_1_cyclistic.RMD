@@ -14,27 +14,140 @@ knitr::opts_chunk$set(echo = FALSE)
 - Objective
 - What the data shows
 - Conclusion
-- Appendix?
 
 ## Objectives
 
 - How do annual members and casual riders use Cyclistic bikes differently?
-- With this information, how can casual riders be coaxed into purchasing a membership?
 
 ## What the data shows
 
-- Bullet 1
+- Casual riders use the service more on weekends; less during the week.
+- Members use the service consistently throughout the entire week.
+- Casual rides appear to be longer on average than member rides.
 
+```{r scripts, echo = FALSE, include=FALSE,message=FALSE, warning=FALSE}
+# Load the required libraries
+library(tidyverse)
+library(janitor)
+library(readr)
+library(tidyr)
+library(chron)
+library(dplyr)
+library(readr)
+library(lubridate)
 
-## Slide with R Output
+options("scipen"=10)
 
-```{r cars, echo = TRUE}
-summary(cars)
+# Import and combine twelve months of data into one dataset
+combined_trip_data <- list.files(path = "./Datasets/Modified CSV Files",  # Identify all CSV files
+  pattern = "*.csv", full.names = TRUE) %>% 
+  lapply(read_csv) %>%                              # Store all files in list
+  bind_rows                                         # Combine data sets into one data set
+
+# Rename columns to be more readable and self-explanatory
+(combined_trip_data <- rename(combined_trip_data
+                   ,trip_id = ride_id
+                   ,start_time = started_at
+                   ,end_time = ended_at
+                   ,from_station_name = start_station_name
+                   ,from_station_id = start_station_id
+                   ,to_station_name = end_station_name
+                   ,to_station_id = end_station_id
+                   ,usertype = member_casual))
+
+# Trim the dataset to only include the most relevant information
+trimmed_trip_data <- combined_trip_data %>%
+  select(-c(start_lat, start_lng, end_lat, end_lng, from_station_name,from_station_id,to_station_name,to_station_id))
+
+# Inspect the data
+colnames(trimmed_trip_data)
+glimpse(trimmed_trip_data)
+nrow(trimmed_trip_data)
+dim(trimmed_trip_data)
+head(trimmed_trip_data)
+tail(trimmed_trip_data)
+summary(trimmed_trip_data)
+str(trimmed_trip_data)
+
+trimmed_trip_data$date <- as.Date(trimmed_trip_data$start_time) #The default format is yyyy-mm-dd
+trimmed_trip_data$month <- format(as.Date(trimmed_trip_data$date), "%m")
+trimmed_trip_data$day <- format(as.Date(trimmed_trip_data$date), "%d")
+trimmed_trip_data$year <- format(as.Date(trimmed_trip_data$date), "%Y")
+
+# Recode the day of week from a number to a day. (Data was initially manipulated calculating
+# day of week as a double.)
+trimmed_trip_data$day_of_week <- format(as.Date(trimmed_trip_data$date), "%A")
+
+# Determine which columns/rows contain the most NA's.
+sapply(trimmed_trip_data, function(x) sum(is.na(x)))
+
+# Remove any rows where ride length <= 0 seconds and greater than 3 hours.
+cleaned_trip_data <- trimmed_trip_data[!(trimmed_trip_data$ride_length <= 0 | trimmed_trip_data$ride_length >= 10800),]
+sapply(cleaned_trip_data, function(x) sum(is.na(x)))
+
+# Remove rows with NAs.
+cleaned_trip_data <- na.omit(cleaned_trip_data)
 ```
 
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
+## Ride Statistics
+```{r statistics_2, echo=FALSE, fig.keep='all', warning=FALSE, message=FALSE, tidy=TRUE}
+cleaned_trip_data %>% 
+  mutate(weekday = wday(start_time, label = TRUE)) %>% 
+  group_by(usertype, weekday) %>% 
+  summarise(number_of_rides = n(), 
+  average_duration = mean(ride_length)) %>%
+  arrange(usertype, weekday)
 ```
 
+##
+```{r chart_2, echo=FALSE,results='hide',fig.keep='all',warning=FALSE,message=FALSE}
+cleaned_trip_data %>%
+  mutate(weekday = wday(start_time, label = TRUE)) %>% 
+  group_by(usertype, weekday) %>%
+  summarise(number_of_rides = n(),
+  average_duration = mean(ride_length)) %>%
+  arrange(usertype, weekday) %>% 
+  ggplot(aes(x = weekday, y = average_duration, fill = usertype)) +
+  geom_col(position = "dodge") +
+  labs(
+    x = "Day of Week", y = "Average Ride Length",
+    color = "New Legend Title",
+    title = "Average ride length per usertype by day of week",
+    subtitle = "Estimates based on data collected over the past twelve months.",
+    caption = "Source: Cyclistic bikeshare terminals"
+  ) +
+  scale_fill_discrete(name="Usertype") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+##
+```{r chart_1, echo=FALSE, results='hide',fig.keep='all',warning=FALSE,message=FALSE}
+cleaned_trip_data %>% 
+  mutate(weekday = wday(start_time, label = TRUE)) %>% 
+  group_by(usertype, weekday) %>%
+  summarise(number_of_rides = n(),
+  average_duration = mean(ride_length)) %>% 
+  arrange(usertype, weekday)  %>% 
+  ggplot(aes(x = weekday, y = number_of_rides, fill = usertype)) +
+  geom_col(position = "dodge") +
+  labs(
+    x = "Day of Week", y = "# of Rides",
+    color = NULL,
+    title = "Number of rides each day by usertype",
+    subtitle = "Estimates based on data collected over the past twelve months.",
+    caption = "Source: Cyclistic bikeshare terminals"
+  ) +
+  scale_fill_discrete(name="Usertype") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+## Conclusion
+
+- Casual riders are using the service, on average, longer than members and appear
+to be using them for more leisure activities. (Higher usage on weekends.)
+
+- Members are using the service more consistently throughout the week for
+shorter durations, which could indicate they are using it as a form of transit
+to and from work.

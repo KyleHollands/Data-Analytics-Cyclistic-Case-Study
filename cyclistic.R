@@ -8,6 +8,8 @@ library(dplyr)
 library(readr)
 library(lubridate)
 
+options("scipen"=10)
+
 # Import and combine twelve months of data into one dataset
 combined_trip_data <- list.files(path = "./Datasets/Modified CSV Files",  # Identify all CSV files
   pattern = "*.csv", full.names = TRUE) %>% 
@@ -57,15 +59,15 @@ sapply(trimmed_trip_data, function(x) sum(is.na(x)))
 
 # Remove any rows where ride length <= 0 seconds and greater than 3 hours.
 cleaned_trip_data <- trimmed_trip_data[!(trimmed_trip_data$ride_length <= 0 | trimmed_trip_data$ride_length >= 10800),]
-glimpse(cleaned_trip_data)
 sapply(cleaned_trip_data, function(x) sum(is.na(x)))
 
 # Remove rows with NAs.
 cleaned_trip_data <- na.omit(cleaned_trip_data)
-glimpse(cleaned_trip_data)
 
 sapply(cleaned_trip_data, function(x) sum(is.na(x)))
 glimpse(cleaned_trip_data)
+
+summary(cleaned_trip_data)
 
 # Calculate initial statistics for casual riders
 
@@ -82,8 +84,6 @@ cleaned_trip_data %>%
   summarize(min_ride_length = min(ride_length),
             average_ride_length = mean(ride_length),
             max_ride_length = max(ride_length))
-
-glimpse(cleaned_trip_data)
 
 # Determine which day is the most popular, what the most popular bike is,
 # and whether members or casual riders are in the majority.
@@ -140,8 +140,8 @@ cleaned_trip_data %>%
     x = "Day of Week", y = "# of Rides",
     color = NULL,
     title = "Number of rides each day by usertype",
-    subtitle = "Estimates based on ridership data collected through Cyclistic bikeshare terminals",
-    caption = "Source: Cyclistic"
+    subtitle = "Estimates based on data collected over the past twelve months.",
+    caption = "Source: Cyclistic bikeshare terminals"
   ) +
   scale_fill_discrete(name="Usertype") +
   theme_minimal() +
@@ -160,8 +160,8 @@ cleaned_trip_data %>%
     x = "Day of Week", y = "Average Ride Length",
     color = "New Legend Title",
     title = "Average ride length per usertype by day of week",
-    subtitle = "Estimates based on ridership data collected through Cyclistic bikeshare terminals",
-    caption = "Source: Cyclistic"
+    subtitle = "Estimates based on data collected over the past twelve months.",
+    caption = "Source: Cyclistic bikeshare terminals"
   ) +
   scale_fill_discrete(name="Usertype") +
   theme_minimal() +
