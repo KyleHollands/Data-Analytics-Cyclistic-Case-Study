@@ -151,3 +151,8 @@ to be using them for more leisure activities. (Higher usage on weekends.)
 - Members are using the service more consistently throughout the week for
 shorter durations, which could indicate they are using it as a form of transit
 to and from work.
+
+## Next Steps
+
+- Determine how to convert casual riders into members.
+  - More data will be required for further analysis.
