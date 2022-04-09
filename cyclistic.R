@@ -4,10 +4,13 @@ library(janitor)
 library(readr)
 library(tidyr)
 library(chron)
-library(dplyr)
+library(dplyr, warn.conflicts = FALSE)
 library(readr)
 library(lubridate)
 library(ggplot2)
+
+options("scipen"=10,
+dplyr.summarise.inform = FALSE)
 
 # Import and combine twelve months of data into one dataset
 combined_trip_data <- list.files(path = "./Datasets/Modified CSV Files",  # Identify all CSV files
@@ -31,7 +34,7 @@ table(combined_trip_data$rideable_type)
 
 # Trim the dataset to only include the most relevant information
 trimmed_trip_data <- combined_trip_data %>%
-  select(-c(start_lat, start_lng, end_lat, end_lng))
+  select(-c(start_lat, start_lng, end_lat, end_lng, from_station_name,from_station_id,to_station_name,to_station_id))
 
 # Inspect the data
 
@@ -127,9 +130,9 @@ glimpse(cleaned_trip_data)
 cleaned_trip_data %>% 
   mutate(weekday = wday(start_time, label = TRUE)) %>%  #creates weekday field using wday()
   group_by(usertype, weekday) %>%  #groups by usertype and weekday
-  summarise(number_of_rides = n()                            #calculates the number of rides and average duration 
-  ,average_duration = mean(ride_length)) %>%         # calculates the average duration
-  arrange(usertype, weekday)                                # sorts
+  summarise(number_of_rides = n(),                            #calculates the number of rides and average duration 
+  average_duration = mean(ride_length)) %>%         # calculates the average duration
+  arrange(usertype, weekday)                               # sorts
 
 # Visualize the number of rides by usertype
 cleaned_trip_data %>%

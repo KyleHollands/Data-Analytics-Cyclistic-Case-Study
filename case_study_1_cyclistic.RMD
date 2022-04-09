@@ -36,7 +36,8 @@ library(dplyr)
 library(readr)
 library(lubridate)
 
-options("scipen"=10)
+options("scipen"=10,
+dplyr.summarise.inform = FALSE)
 
 # Import and combine twelve months of data into one dataset
 combined_trip_data <- list.files(path = "./Datasets/Modified CSV Files",  # Identify all CSV files
