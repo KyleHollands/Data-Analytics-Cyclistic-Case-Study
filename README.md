@@ -197,22 +197,28 @@ Share
 Guiding questions 
 
 ● Were you able to answer the question of how annual members and casual riders use Cyclistic bikes differently?
+
 Yes. The data indicates that casual riders are utilizing the service for more leisure rides, such as on the weekends. Members appear to be using the service more consistently throughout the week, likely for work. 
 Members ride activity appears to peak mid-week, around Tuesday and Wednesday, whereas it peaks on Saturday and Sunday for Casual riders.
 
 ● What story does your data tell? 
+
 The story that is being told within the data, is that casual riders are using this service during the weekends, likely for one-off, leisure rides. Additionally, casual riders tend to use the bike longer each trip, on average.
 Members on the other hand, appear to be using it more during the week, likely as their main form of transportation commuting to and from work. These rides also appear to be shorter in duration, on average, compared to casual riders.
 
 ● How do your findings relate to your original question?
+
 The findings relate directly to the original question, which was "How do annual members and casual riders use Cyclistic bikes differently?" by clearly indicating the differences between how casual riders and members are utilizing the service.
 
 ● Who is your audience? What is the best way to communicate with them?
+
 The stakeholders are Lily Moreno, the Director of Marketing and the Cyclistic executive team.
 Communicating with the Lily, the manager, is far more direct than it is with the Executive team. Likely, updates will be provided through Lily, to them.
+
 In terms of communicating the findings of this analysis, a case study can serve this purpose, detailing the data behind the findings in an easy to digest way, while also providing simple visualizations that emphasize them in a way that can be easier and more quickly understood.
 
 ● Can data visualization help you share your findings?
+
 Data visualization in this  circumstance can definitely help share these findings. The type of story this data tells is easily understood through a couple of simple visualizations which indicate the contrast between the different members and how they use the service.
 
 ● Is your presentation accessible to your audience?
@@ -226,16 +232,3 @@ Key tasks
 Deliverable:
 
 Supporting visualizations and key findings
-
-
-------------------------------------------------------------------------------
-
-With the objective clear, the next step is to analyze the data set. This will
-include viewing it to investigate any obvious issues, such as missing data,
-incorrectly formatted data, irrelevant data, etc.
-
-Cleaning of the data, if necessary, needs to be done, such as filtering out NAs,
-recording data to the correct data type, etc.
-
-Next will be to identify which variables to include in the updated dataframe
-that will allow for the required questions to be answered.
