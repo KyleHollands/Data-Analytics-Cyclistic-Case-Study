@@ -222,12 +222,14 @@ In terms of communicating the findings of this analysis, a case study can serve 
 Data visualization in this  circumstance can definitely help share these findings. The type of story this data tells is easily understood through a couple of simple visualizations which indicate the contrast between the different members and how they use the service.
 
 ● Is your presentation accessible to your audience?
+The findings are effectively communicated through the charts provided, which makes it highly available to the majority of audiences. Additionally, the statistics are provided in
+the form of a table.
 
 Key tasks
 1. Determine the best way to share your findings. **
 2. Create effective data visualizations. **
-3. Present your findings. 
-4. Ensure your work is accessible. 
+3. Present your findings. **
+4. Ensure your work is accessible. **
 
 Deliverable:
 

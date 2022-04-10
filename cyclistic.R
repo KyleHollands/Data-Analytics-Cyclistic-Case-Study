@@ -17,15 +17,15 @@ combined_trip_data <- list.files(path = "./Datasets/Modified CSV Files",  # Iden
   bind_rows                                         # Combine data sets into one data set
 
 # Rename columns to be more readable and self-explanatory
-(combined_trip_data <- rename(combined_trip_data
-                   ,trip_id = ride_id
-                   ,start_time = started_at
-                   ,end_time = ended_at
-                   ,from_station_name = start_station_name
-                   ,from_station_id = start_station_id
-                   ,to_station_name = end_station_name
-                   ,to_station_id = end_station_id
-                   ,usertype = member_casual))
+(combined_trip_data <- rename(combined_trip_data,
+  trip_id = ride_id,
+  start_time = started_at,
+  end_time = ended_at,
+  from_station_name = start_station_name,
+  from_station_id = start_station_id,
+  to_station_name = end_station_name,
+  to_station_id = end_station_id,
+  usertype = member_casual))
 
 # Trim the dataset to only include the most relevant information
 trimmed_trip_data <- combined_trip_data %>%
