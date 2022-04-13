@@ -156,4 +156,5 @@ to and from work.
 ## Next Steps
 
 - Determine how to convert casual riders into members.
-  - More data will be required for further analysis.
+  - More data will be required for further analysis, such as a unique member ID
+  for repeat trips.
