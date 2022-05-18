@@ -2,8 +2,9 @@
 
 ## Pitch
 This case study aims at determining how the two main types of riders (Casual and Member) utilize the Cyclistic bikeshare service differently. With these differences known, steps can be taken to determine how to convert casual riders to members, which are a more lucrative customer.
+
 ---
-Ask
+> Ask
 ---
 
 Guiding questions
@@ -35,7 +36,7 @@ The business task is to determine how to convert casual riders into members,
 thus driving business revenue.
 
 -------
-Prepare
+> Prepare
 -------
 
 Guiding questions
@@ -90,7 +91,7 @@ The data has been acquired from Motivate International Inc. for public use, excl
 It contains data that is relevant to the business task, such as rider status, length of ride times, etc.
 
 -------
-Process
+> Process
 -------
 Guiding questions 
 
@@ -136,7 +137,7 @@ Deliverable:
 Documentation of any cleaning or manipulation of data
 
 -------
-Analyze
+> Analyze
 -------
 
 Guiding questions 
@@ -204,7 +205,7 @@ A summary of your analysis
 Preliminary analysis indicates that casual riders tend to, on average, have longer ride times than members. Furthermore, casual riders appear to use the service more on weekends, likely for leisure activities and communtes, while members use it more consistently (and more often) during the week. This likely indicates that members are using the service for work more often than casual riders are.
 
 -------
-Share
+> Share
 -------
 
 Guiding questions 
@@ -249,7 +250,7 @@ Deliverable:
 Supporting visualizations and key findings
 
 -------
-Act
+> Act
 -------
 
 Guiding questions 
