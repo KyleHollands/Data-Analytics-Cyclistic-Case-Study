@@ -1,4 +1,7 @@
 # Data-Analytics-Cyclistic-Case-Study
+
+## Pitch
+This case study aims at determining how the two main types of riders (Casual and Member) utilize the Cyclistic bikeshare service differently. With these differences known, steps can be taken to determine how to convert casual riders to members, which are a more lucrative customer.
 ---
 Ask
 ---
