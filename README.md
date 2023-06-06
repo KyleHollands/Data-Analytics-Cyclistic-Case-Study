@@ -251,23 +251,19 @@ Guiding questions
  
 ● What is your final conclusion based on your analysis?
 
-Based on the business objective, the final conclusion is that on average, casual riders have longer average ride times, and use the service more on weekends, whereas
-members use the service more consistently throughout the week, during shorter intervals.
+Based on the business objective, our analysis of ridership data shows that casual riders have longer average ride times and use the service more on weekends, while members use the service more consistently throughout the week, during shorter intervals.
 
 ● How could your team and business apply your insights? 
 
-With this information, the team can now take the next step to leverage these findings determine how to sell memberships to casual riders.
+With this information, the team can now use these findings to develop a strategy for selling memberships to casual riders.
 
 ● What next steps would you or your stakeholders take based on your findings? 
 
-The insights that have been gained from this data provide a good foundation for the analysis that needs to come next by leveraging this data: how do we
-coax casual riders into becoming members? More data is likely required, but this is a good start.
+The insights gained from this data provide a solid foundation for the next phase of analysis: how can we convert casual riders into members? More data is likely required, but this is a good start.
 
 ● Is there additional data you could use to expand on your findings?
 
-Having a better way to know if a specific rider has used the service multiple times a day could help determine whether or not
-members are using the service for work, as typically you expect someone to use it there and back. The data indicates members are
-using the service for shorter durations on average.
+It would be beneficial to have a more efficient method of tracking the frequency of a particular user's rides in a day. This would aid in identifying if members are utilizing the service for work purposes, as it is common to expect a round trip. The statistics suggest that members use the service for shorter periods on average.
 
 Key tasks 
 
